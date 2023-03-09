@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Layout from "./components/Layout";
-import Results from "./components/Results";
 import ResultTable from "./components/ResultTable";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -40,8 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Navigate to="/search" />} />
       <Route path="/" element={<Layout />} >
 			<Route path="search" element={<Search />} />
-			<Route path="result" element={<Results />} />
-			<Route path="resultdatatable" element={<ResultTable />} />
+			<Route path="result" element={<ResultTable />} />
       <Route path="*" element={<ErrorBoundary/>}/>
       </Route>
       </Routes>

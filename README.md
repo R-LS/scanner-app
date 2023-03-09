@@ -12,7 +12,14 @@ validated, the user should be able to view a list of all available scanners alon
 ### Routes
 
 /search - default route and main search page  
-/result - displays list of scanners and their availability in a data table that can be sorted or filtered, only accessible after validation of inputs via /search
+/result - displays list of scanners and their availability in a data table that can be sorted or filtered, only accessible after validation of inputs via /search  
+other : invalid routes automatically show a 404 not gound page
+
+### Test cases
+
+/search - happy path, negative test cases  
+/result - loading of data into table  
+Not yet implemented: test navigation across pages, test of display of status in table
 
 ### Libraries & Packages Used
 1. [Material UI](https://mui.com/)

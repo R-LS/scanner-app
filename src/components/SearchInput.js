@@ -14,7 +14,7 @@ import {
 	LinearProgress,
 	Box,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -79,8 +79,13 @@ const SearchInput = () => {
 		mutate(data, {
 			onSuccess: (res) => {
 				axios.get("https://wavescan-internship.saurabhmudgal.repl.co/success").then((resp) => {
-					navigate("/resultdatatable",{state: {scannerData: resp.data}});
-				
+					var scData = resp.data.map((row,i)=>{
+						row.id=i
+						return row
+					})
+					console.log(resp.data)
+					navigate("/result",{state: {scannerData: scData}});
+					
 				})
 				setIsSending(false);
 			},
@@ -93,6 +98,10 @@ const SearchInput = () => {
 	//console.log("form errors:", errors.projectName);
 
 	const scanOpts = ["Gantry", "Crawler", "Auto", "Manual", "Arm"];
+
+	useEffect(()=>{
+		window.history.replaceState({}, document.title)
+	})
 
 	return (
 		<Card>

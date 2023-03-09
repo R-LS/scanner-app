@@ -20,10 +20,7 @@ const columns = [
 export default function ResultTable() {
 
     const {state,isFetching,isLoading, isError } = useLocation();
-    state.scannerData.map((scData,i)=>{
-        scData.id=i
-        return scData
-    })
+    
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -49,7 +46,7 @@ export default function ResultTable() {
 				) : (
     <>
         <Alert severity="info">Showing {state.scannerData.length} results</Alert>
-          <DataGrid sx={{p:3}}
+        <DataGrid sx={{p:3}}
             rows={state.scannerData}
             columns={columns}
             pageSize={8}
