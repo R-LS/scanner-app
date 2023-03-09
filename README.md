@@ -1,12 +1,30 @@
 # WaveScan Basic Scanner App
 
+A simple web application that allows
+users to post information to the scanners and view which scanners are available.
+
+## Task
+Design and build a web application using ReactJS that allows users to input scanner
+parameters and submit the information to a backend API for validation. Once the information is
+validated, the user should be able to view a list of all available scanners along with their details. 
 
 
-# Getting Started with Create React App
+### Routes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+/search - default route and main search page  
+/result - displays list of scanners and their availability in a data table that can be sorted or filtered, only accessible after validation of inputs via /search
 
-## Available Scripts
+### Libraries & Packages Used
+1. [Material UI](https://mui.com/)
+2. [React Hook Form](https://react-hook-form.com/), [Yup](https://www.npmjs.com/package/yup)
+3. [React Router](https://reactrouter.com/en/main)
+4. [React Query](https://react-query-v3.tanstack.com/), [Axios](https://axios-http.com/docs/intro)
+5. [Jest](https://jestjs.io/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+---
+### This project was initiated with [Create React App](https://github.com/facebook/create-react-app).
+
+### Available Scripts
 
 In the project directory, you can run:
 

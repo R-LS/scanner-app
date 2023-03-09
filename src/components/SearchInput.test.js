@@ -11,7 +11,7 @@ import { render,fireEvent,screen } from "@testing-library/react"
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import {QueryClient,QueryClientProvider}  from 'react-query';
-
+import renderer from 'react-test-renderer'
 
 const queryClient = new QueryClient()
 
@@ -84,3 +84,10 @@ test("All 5 fields should be required",async ()=>{
 })})
 
 
+
+describe("Form should be rendered correctly",()=>{test('Snapshot testing renders correctly', () => {
+  const tree = renderer
+    .create(<QueryClientProvider client={queryClient}><SearchInput/></QueryClientProvider>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});})

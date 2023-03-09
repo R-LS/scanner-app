@@ -33,7 +33,7 @@ export default function Results() {
         if (state == null) {
             navigate("/search")
         }
-      }, [state])
+      }, [state,navigate])
 
 
 	//console.log("data:", state);
