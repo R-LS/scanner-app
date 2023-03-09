@@ -14,7 +14,7 @@ validated, the user should be able to view a list of all available scanners alon
 
 /search - default route and main search page  
 /result - displays list of scanners and their availability in a data table that can be sorted or filtered, only accessible after validation of inputs via /search  
-other : invalid routes automatically show a 404 not gound page
+other : invalid routes automatically show a 404 not found page
 
 ### Automated Test cases
 
