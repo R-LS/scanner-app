@@ -13,7 +13,7 @@ const columns = [
   { field: 'scannerSpeed', headerName: 'Scanner Speed',flex:1},
   { field: 'isAvailable', headerName: 'Status',
   renderCell: (params) => (
-    <Chip label={params.value=="true"?"Available":"Engaged"} color={params.value=="true"?"success":"warning"} variant="outlined" />
+    <Chip label={params.value==="true"?"Available":"Engaged"} color={params.value==="true"?"success":"warning"} variant="outlined" />
   ),},
 ];
 

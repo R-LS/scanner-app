@@ -90,7 +90,7 @@ const SearchInput = () => {
 			},
 		});
 	};
-	console.log("form errors:", errors.projectName);
+	//console.log("form errors:", errors.projectName);
 
 	const scanOpts = ["Gantry", "Crawler", "Auto", "Manual", "Arm"];
 
@@ -104,7 +104,7 @@ const SearchInput = () => {
 								name={"projectName"}
 								control={control}
 								rules={{ required: true }}
-								render={({ field: { onChange, value } }) => (
+								render={({ field: { onChange, value="" } }) => (
 									<TextField
 										fullWidth
 										data-testid="tf-projectName"
@@ -131,7 +131,7 @@ const SearchInput = () => {
 									control={control}
 									rules={{ required: true }}
 									render={({
-										field: { onChange, value },
+										field: { onChange, value="" },
 									}) => (
 										<Select
 											id="scanningMode"
@@ -164,7 +164,7 @@ const SearchInput = () => {
 								name={"scanDimensionsX"}
 								control={control}
 								rules={{ required: true }}
-								render={({ field: { onChange, value } }) => (
+								render={({ field: { onChange, value="" } }) => (
 									<TextField
 										label="Scan DimensionX(cm)"
 										id="scanDimensionsX"
@@ -192,7 +192,7 @@ const SearchInput = () => {
 								name={"scanDimensionsY"}
 								control={control}
 								rules={{ required: true }}
-								render={({ field: { onChange, value } }) => (
+								render={({ field: { onChange, value="" } }) => (
 									<TextField
 										label="Scan DimensionY(cm)"
 										id="scanDimensionsY"
@@ -220,7 +220,7 @@ const SearchInput = () => {
 								name={"scannerFrequency"}
 								control={control}
 								rules={{ required: true }}
-								render={({ field: { onChange, value } }) => (
+								render={({ field: { onChange, value="" } }) => (
 									<TextField
 										fullWidth
 										error={errors.scannerFrequency!==undefined}
