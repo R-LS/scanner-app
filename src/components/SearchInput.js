@@ -84,7 +84,7 @@ const SearchInput = () => {
 						return row
 					})
 					console.log(resp.data)
-					navigate("/result",{state: {scannerData: scData}});
+					navigate("../result",{state: {scannerData: scData}});
 					
 				})
 				setIsSending(false);

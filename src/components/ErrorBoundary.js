@@ -10,7 +10,7 @@ const ErrorBoundary = () => {
 
                     <img
                     alt="Under development"
-                    src="/undraw_page_not_found_su7k.svg"
+                    src="undraw_page_not_found_su7k.svg"
                     style={{
                     display: 'inline-block',
                     maxWidth: '100%',

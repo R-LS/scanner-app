@@ -26,7 +26,7 @@ export default function ResultTable() {
     useEffect(() => {
         //console.log("hit useeffect")
         if (state == null) {
-            navigate("/search")
+            navigate("../search")
         }
     }, [state,navigate])
 
@@ -36,7 +36,7 @@ export default function ResultTable() {
 		direction="row"
 		justifyContent="center"
 		alignItems="center">
-			<Grid item xs={12} md={9} lg={8} sx={{height:"40vh"}}>
+			<Grid item xs={12} md={9} lg={8} sx={{height:"60vh"}}>
 				{isLoading || isFetching ||!state ? (
 					<LoadingTable />
 				) : isError ?  (

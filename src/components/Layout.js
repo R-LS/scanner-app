@@ -18,7 +18,7 @@ const Layout = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             WaveScan
           </Typography>
-          <Button sx={{color:"white"}} onClick={()=>{navigate("/search")}} startIcon={<SearchIcon />}>
+          <Button sx={{color:"white"}} onClick={()=>{navigate("/scanner-app/search")}} startIcon={<SearchIcon />}>
         Search
       </Button>
         </Toolbar>

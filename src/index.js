@@ -36,8 +36,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 			<QueryClientProvider client={queryClient}>
 				<BrowserRouter>
         <Routes>
-        <Route path="/" element={<Navigate to="/search" />} />
-      <Route path="/" element={<Layout />} >
+        <Route path="/scanner-app/" element={<Navigate to="/scanner-app/search" />} />
+      <Route path="/scanner-app/" element={<Layout />} >
 			<Route path="search" element={<Search />} />
 			<Route path="result" element={<ResultTable />} />
       <Route path="*" element={<ErrorBoundary/>}/>
