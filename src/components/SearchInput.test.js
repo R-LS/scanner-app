@@ -29,6 +29,12 @@ const testInput = async(name, value, fieldError, id) => {
   expect(fieldError.id).toBe(id)
 }
 
+const fillTextField = (name, value)=>{
+  const textfield = screen.getByRole("textbox",{name: name})
+  fireEvent.change(textfield, {target: {value: value}})
+
+}
+
 //error message testing
 describe("Input validation negative test cases",()=>{
 
@@ -87,7 +93,21 @@ test("Scanner frequency must be number or decimal",async()=>{
 
 })
 
+describe("Input validation happy path",()=>{test('Successful validation and loading bar appears', async() => {
+  fillTextField("Project Name","Test Project")
+  fillTextField("Scan DimensionX(cm)","10")
+  fillTextField("Scan DimensionY(cm)","10")
+  fillTextField("Scanner Frequency (GHz)","10")
+  const selectField = screen.getByRole("button",{expanded:false})
+  act(()=>{userEvent.click(selectField)})
+  var option = await screen.findByText('Arm')
+  act(()=>{userEvent.click(option)
+    userEvent.click(screen.getByText('Scan'))})
+  var loadingBar = await screen.findByTestId("loadingBar")
+  expect(loadingBar).toBeVisible()
 
+
+});})
 
 describe("Form should be rendered correctly",()=>{test('Snapshot testing renders correctly', () => {
   const tree = renderer

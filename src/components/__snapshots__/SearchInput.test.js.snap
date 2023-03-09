@@ -76,6 +76,7 @@ exports[`Form should be rendered correctly Snapshot testing renders correctly 1`
             </label>
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+              data-testid="scanningMode"
               onClick={[Function]}
             >
               <div

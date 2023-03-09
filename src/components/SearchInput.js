@@ -135,6 +135,7 @@ const SearchInput = () => {
 									}) => (
 										<Select
 											id="scanningMode"
+											data-testid ="scanningMode"
 											labelId="scanningMode-label"
 											value={value}
 											defaultValue={scanOpts[0].toUpperCase()}
@@ -260,7 +261,7 @@ const SearchInput = () => {
 						{isSending && (
 							<Grid item md={12}>
 								<Box sx={{ width: "100%" }} data-testid="loading">
-									<LinearProgress />
+									<LinearProgress data-testid="loadingBar"/>
 								</Box>
 							</Grid>
 						)}
