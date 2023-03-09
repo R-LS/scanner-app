@@ -17,11 +17,12 @@ const columns = [
   ),},
 ];
 
-export default function DataTable() {
+export default function ResultTable() {
 
     const {state,isFetching,isLoading, isError } = useLocation();
     state.scannerData.map((scData,i)=>{
         scData.id=i
+        return scData
     })
 
     const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function DataTable() {
         if (state == null) {
             navigate("/search")
         }
-    }, [state])
+    }, [state,navigate])
 
   return (
     <Grid sx={{height:"90vh"}}

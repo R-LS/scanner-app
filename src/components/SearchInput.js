@@ -78,7 +78,7 @@ const SearchInput = () => {
 
 		mutate(data, {
 			onSuccess: (res) => {
-				axios.get("https://wavescan-internship.saurabhmudgal.repl.co"+"/success").then((resp) => {
+				axios.get("https://wavescan-internship.saurabhmudgal.repl.co/success").then((resp) => {
 					navigate("/resultdatatable",{state: {scannerData: resp.data}});
 				
 				})
@@ -90,7 +90,7 @@ const SearchInput = () => {
 			},
 		});
 	};
-	//console.log("form errors:", errors);
+	console.log("form errors:", errors.projectName);
 
 	const scanOpts = ["Gantry", "Crawler", "Auto", "Manual", "Arm"];
 
@@ -109,7 +109,7 @@ const SearchInput = () => {
 										fullWidth
 										data-testid="tf-projectName"
 										id="projectName"
-										error={errors.projectName}
+										error={errors.projectName!==undefined}
 										onChange={onChange}
 										value={value}
 										label={"Project Name"}
@@ -122,7 +122,7 @@ const SearchInput = () => {
 							/>
 						</Grid>
 						<Grid item md={12} xs={12}>
-							<FormControl fullWidth error={errors.scanningMode}>
+							<FormControl fullWidth error={errors.scanningMode!==undefined}>
 								<InputLabel id={"scanningMode-select-label"}>
 									Scanning Mode
 								</InputLabel>
@@ -169,7 +169,7 @@ const SearchInput = () => {
 										label="Scan DimensionX(cm)"
 										id="scanDimensionsX"
 										fullWidth
-										error={errors.scanDimensionsX}
+										error={errors.scanDimensionsX!==undefined}
 										helperText={
 											errors.scanDimensionsX &&
 											errors.scanDimensionsX.message
@@ -197,7 +197,7 @@ const SearchInput = () => {
 										label="Scan DimensionY(cm)"
 										id="scanDimensionsY"
 										fullWidth
-										error={errors.scanDimensionsY}
+										error={errors.scanDimensionsY!==undefined}
 										helperText={
 											errors.scanDimensionsY &&
 											errors.scanDimensionsY.message
@@ -223,7 +223,7 @@ const SearchInput = () => {
 								render={({ field: { onChange, value } }) => (
 									<TextField
 										fullWidth
-										error={errors.scannerFrequency}
+										error={errors.scannerFrequency!==undefined}
 										onChange={onChange}
 										id="scannerFrequency"
 										value={value}
