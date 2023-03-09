@@ -9,6 +9,11 @@ Design and build a web application using ReactJS that allows users to input scan
 parameters and submit the information to a backend API for validation. Once the information is
 validated, the user should be able to view a list of all available scanners along with their details. 
 
+## Features
+* Form input validation  
+* Responsive screens  
+* Basic route guarding and user rerouting
+* Automated build and CI and tests on Github 
 
 ### Routes
 
@@ -17,8 +22,7 @@ validated, the user should be able to view a list of all available scanners alon
 other : invalid routes automatically show a 404 not found page
 
 ### Automated Test cases
-
-/search - happy path, negative test cases  
+/search - happy path, negative test cases, snapshot testing 
 /result - loading of data into table  
 Not yet implemented: test navigation across pages, test of display of status in table
 
