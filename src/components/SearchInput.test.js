@@ -7,11 +7,12 @@ jest.mock('react-router-dom', () => ({
 
 
 import SearchInput from "./SearchInput"
-import { render,fireEvent,screen } from "@testing-library/react"
+import { render,fireEvent,screen, act } from "@testing-library/react"
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import {QueryClient,QueryClientProvider}  from 'react-query';
 import renderer from 'react-test-renderer'
+
 
 const queryClient = new QueryClient()
 
@@ -22,7 +23,7 @@ beforeEach(() => {
 const testInput = async(name, value, fieldError, id) => {
   const textfield = screen.getByRole("textbox",{name: name})
   fireEvent.change(textfield, {target: {value: value}})
-  userEvent.click(screen.getByText('Scan'))
+  act(()=>{userEvent.click(screen.getByText('Scan'))})
   var fieldError = await screen.findByText(fieldError)
   expect(fieldError).toBeTruthy()
   expect(fieldError.id).toBe(id)
@@ -72,7 +73,7 @@ test("Scanner frequency must be number or decimal",async()=>{
 
 test("All 5 fields should be required",async ()=>{
     // ACT
-    userEvent.click(screen.getByText('Scan'))
+    act(()=>{userEvent.click(screen.getByText('Scan'))})
     var fieldRequired = await screen.findAllByText('This field is required')
     //ASSERT
     expect(fieldRequired.length).toBe(5)
